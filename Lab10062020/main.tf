@@ -17,5 +17,5 @@ resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdd"
   volume_id   = "${aws_ebs_volume.esb2.id}"
   instance_id = "${aws_instance.lwlab.id}"
-  delete_on_termination="true"
+  #delete_on_termination="true"
 }
