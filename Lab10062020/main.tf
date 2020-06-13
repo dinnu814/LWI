@@ -3,7 +3,7 @@ resource "aws_instance" "lwlab" {
     instance_type="${var.instancetype}"
     key_name="${var.key}"
     tags={
-        Name="EC2_Terraform_container"
+        Name="lab10062020"
     
     }
 }
@@ -17,4 +17,5 @@ resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdd"
   volume_id   = "${aws_ebs_volume.esb2.id}"
   instance_id = "${aws_instance.lwlab.id}"
+  delete_on_termination="true"
 }
